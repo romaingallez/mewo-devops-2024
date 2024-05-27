@@ -1,4 +1,8 @@
 from flask import Flask
+import os
+
+PORT = os.environ.get('PORT', 8080)
+
 
 app = Flask(__name__)
 
@@ -6,4 +10,4 @@ app = Flask(__name__)
 def index():
     return 'Web App with Python Flask!'
 
-app.run(host='0.0.0.0', port=81)
+app.run(host='0.0.0.0', port=PORT)
